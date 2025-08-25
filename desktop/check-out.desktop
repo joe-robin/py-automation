@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=Check Out
-Comment=Automated check-in tool
+Comment=Check out from attendance
 Exec=gnome-terminal -- bash -c "/home/joe-icanio/Learning/py-automation/venv/bin/python /home/joe-icanio/Learning/py-automation/main.py check-out; echo 'Press Enter to close...'; read"
 Icon=/home/joe-icanio/Learning/py-automation/desktop/check-out.svg
 Terminal=true

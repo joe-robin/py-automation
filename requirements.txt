@@ -1,8 +1,6 @@
-# Core dependencies
-playwright==1.53.0
-python-dotenv==1.1.1
-
-# Dependencies (automatically installed with above packages)
 greenlet==3.2.3
+package_name==0.1
+playwright==1.53.0
 pyee==13.0.0
+python-dotenv==1.1.1
 typing_extensions==4.14.1
