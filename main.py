@@ -1,26 +1,33 @@
 #!/usr/bin/env python3
 
 
+import sys
 from playwright.sync_api import sync_playwright
-from modules.login import LoginManager
+from paths import Paths
 
 
-def main():
+def main() -> str:
 
     try:
         with sync_playwright() as playwright:
-            browser = playwright.chromium.launch(headless=False)
-            page = browser.new_page()
+            paths = Paths(playwright)
 
-            login_manager = LoginManager()
-            login_manager.login(page)
+            match len(sys.argv):
+                case 1:
+                    paths.no_args()
+                    return "Toggled attendance"
+                case 2:
+                    message = paths.one_arg()
+                    return message
+                case _:
+                    raise ValueError("Invalid attendance command")
 
     except Exception as e:
         print(f"Error: {str(e)}")
-        return 1
-
-    return 0
+        return "Error"
 
 
 if __name__ == "__main__":
-    exit(main())
+    result = main()
+    print(result)
+    exit(0 if result != "Error" else 1)

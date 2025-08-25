@@ -16,18 +16,24 @@ class Config:
         url = os.getenv("URL")
         email = os.getenv("EMAIL")
         password = os.getenv("PASSWORD")
+        headless = os.getenv("HEADLESS")
 
         assert url is not None, "URL must be set in environment variables"
         assert email is not None, "EMAIL must be set in environment variables"
         assert password is not None, "PASSWORD must be set in environment variables"
+        assert headless is not None, "HEADLESS must be set in environment variables"
 
         self.url = url
         self.email = email
         self.password = password
+        self.headless = headless
 
         self.home_page = "/event"
         self.login_page = "/home"
-        self.time_log_page = "/time-sheet"
+        self.attendance_page = "/time-sheet"
+
+        self.check_out_button_color = "rgb(233, 91, 109)"
+        self.check_in_button_color = "rgb(20, 180, 116)"
 
     def get_url(self) -> str:
         return self.url
@@ -44,8 +50,17 @@ class Config:
     def get_home_page_url(self) -> str:
         return self.url + self.home_page
 
-    def get_time_log_page_url(self) -> str:
-        return self.url + self.time_log_page
+    def get_attendance_page_url(self) -> str:
+        return self.url + self.attendance_page
+
+    def get_check_out_button_color(self) -> str:
+        return self.check_out_button_color
+
+    def get_check_in_button_color(self) -> str:
+        return self.check_in_button_color
+
+    def get_headless(self) -> bool:
+        return True if self.headless == "1" else False
 
 
 # Singleton instance

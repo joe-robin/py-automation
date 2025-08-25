@@ -32,5 +32,4 @@ class LoginManager:
         # Click the login button using its text
         page.click('button:has-text("Login")')
         # Wait for login to complete
-        page.wait_for_url(config.get_home_page_url())  # Adjust URL pattern as needed
-        page.wait_for_load_state("networkidle")
+        page.wait_for_url(config.get_home_page_url(), wait_until="commit")
