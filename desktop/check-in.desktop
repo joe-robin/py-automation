@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Check In
+Comment=Automated check-in tool
+Exec=gnome-terminal -- bash -c "/home/joe-icanio/Learning/py-automation/venv/bin/python /home/joe-icanio/Learning/py-automation/main.py check-in; echo 'Press Enter to close...'; read"
+Icon=/home/joe-icanio/Learning/py-automation/desktop/check-in.png
+Terminal=true
+Categories=Utility;

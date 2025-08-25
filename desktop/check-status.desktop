@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Check Status
+Comment=Check current attendance status
+Exec=gnome-terminal -- bash -c "/home/joe-icanio/Learning/py-automation/venv/bin/python /home/joe-icanio/Learning/py-automation/main.py status; echo 'Press Enter to close...'; read"
+Icon=/home/joe-icanio/Learning/py-automation/desktop/loading.png
+Terminal=true
+Categories=Utility;
